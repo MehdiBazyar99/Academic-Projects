@@ -83,8 +83,3 @@ HMS_Project/
 2. Ensure database credentials are configured in `conn.java`
 3. Run the application starting from `Login.java`
 
----
-
-```
-
-Let me know when you want help writing the `.gitignore` file or preparing this for GitHub upload!
