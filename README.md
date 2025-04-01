@@ -1,6 +1,4 @@
 
-
-```markdown
 # 👨‍💻 University Projects
 
 Welcome to my collection of university projects. These projects were developed as part of my coursework and personal learning.
