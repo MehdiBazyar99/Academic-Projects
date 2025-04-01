@@ -83,3 +83,39 @@ HMS_Project/
 2. Ensure database credentials are configured in `conn.java`
 3. Run the application starting from `Login.java`
 
+## 🧮 Project 4: Assembly Language Examples (`AssemblyProjects/`)
+
+### 📌 Description
+This folder contains simple x86 Assembly programs written using NASM syntax for 32-bit Linux. These projects were developed for learning purposes during university and focus on low-level logic, bitwise arithmetic, and control flow using registers and memory manipulation.
+
+> ⚠️ **Note:** These are **educational examples** and may not represent fully optimized or polished production code. They are meant to demonstrate basic assembly concepts.
+
+---
+
+### 📁 Files Included
+
+#### 🔢 `64bit_Addition.asm`
+- **Purpose**: Simulates **64-bit addition** using two 64-bit integers by combining two 32-bit values for each operand.
+- **Concepts**: Register-level arithmetic, `adc` for carry handling, multi-precision operations.
+- **Learning Focus**: Understanding how CPUs process numbers larger than the register size.
+
+#### 🔍 `Perfect_Numbers.asm`
+- **Purpose**: Finds and prints all **perfect numbers** from 1 to 1000.
+- **Concepts**: Loops, modulo using `div`, nested iteration, conditional logic, summing factors.
+- **Learning Focus**: Classic algorithm implemented at the register/memory level.
+
+#### 🧮 `Array_Sum.asm` *(optional)*
+- **Purpose**: Calculates the **sum of an integer array**.
+- **Concepts**: Pointers, loop with index comparison, printing results using assembly I/O routines.
+- **Learning Focus**: Memory access, array traversal, use of `.bss`, `.data`, and `.text` segments.
+
+---
+
+### 🛠️ Requirements
+- **Assembler**: NASM
+- **OS**: Linux (with `asm_io.inc` support)
+- **Build & Run**:
+```bash
+nasm -f elf <filename>.asm
+ld -m elf_i386 -o <filename> <filename>.o asm_io.o
+./<filename>
