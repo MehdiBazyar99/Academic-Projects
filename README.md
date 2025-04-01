@@ -103,12 +103,6 @@ This folder contains simple x86 Assembly programs written using NASM syntax for 
 - **Purpose**: Finds and prints all **perfect numbers** from 1 to 1000.
 - **Concepts**: Loops, modulo using `div`, nested iteration, conditional logic, summing factors.
 - **Learning Focus**: Classic algorithm implemented at the register/memory level.
-
-#### 🧮 `Array_Sum.asm` *(optional)*
-- **Purpose**: Calculates the **sum of an integer array**.
-- **Concepts**: Pointers, loop with index comparison, printing results using assembly I/O routines.
-- **Learning Focus**: Memory access, array traversal, use of `.bss`, `.data`, and `.text` segments.
-
 ---
 
 ### 🛠️ Requirements
