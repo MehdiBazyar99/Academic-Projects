@@ -113,3 +113,32 @@ This folder contains simple x86 Assembly programs written using NASM syntax for 
 nasm -f elf <filename>.asm
 ld -m elf_i386 -o <filename> <filename>.o asm_io.o
 ./<filename>
+
+
+📁 Project 5: Age Calculator in MIPS Assembly (AgeCalculator.asm)
+📌 Description
+This project is a MIPS Assembly language program that calculates a user's age based on their birth date and the current date. It uses basic system calls and arithmetic operations in MIPS, simulating user interaction through console input/output in the MARS 4.5 simulator.
+
+The program was originally written in Java and manually converted into MIPS Assembly to better understand how low-level architectures handle logic, branching, and memory management.
+
+🧠 Key Concepts
+MIPS system calls for I/O
+
+Labeling and branching for condition checks
+
+Data and text sections for memory management
+
+Control structures implemented in assembly (conditional jumps)
+
+Array and memory offset management
+
+Age calculation algorithm implemented in low-level code
+
+📄 Files
+AgeCalculator.asm — The MIPS assembly code
+
+Report.pdf — Detailed explanation (in Persian) of the program logic, system calls used, and architecture background
+
+⚠️ Note
+Like some of the other projects, this one may contain bugs or incomplete features. It was created for educational purposes during university coursework.
+
