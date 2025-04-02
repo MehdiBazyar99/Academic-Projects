@@ -1,26 +1,24 @@
-
 # 👨‍💻 University Projects
 
-Welcome to my collection of university projects. These projects were developed as part of my coursework and personal learning.
+Welcome to my collection of university assignments and practice projects. These were developed throughout my undergraduate studies to gain hands-on experience in systems programming, desktop development, networking, low-level logic, and basic cryptography.
+
+> ⚠️ **Disclaimer:** Many of these projects were written under time constraints or as part of coursework and may include bugs, incomplete features, or inefficient practices. They are shared here purely for educational purposes.
 
 ---
 
-## 📁 Project 1: Per-Core CPU Usage Monitor (`PerC5.py`)
+## 🧠 Project 1: Per-Core CPU Usage Monitor (`PerC5.py`)
 
 ### 📌 Description
-This project is a low-level Linux CPU monitoring tool written in Python. It reads from the `/proc` filesystem to display **per-core CPU usage** in real time, using raw process statistics.
+A low-level Linux CPU monitoring tool written in pure Python. It reads from the `/proc` filesystem to calculate **real-time per-core CPU usage**, similar to `top` or `htop`, but without using any external libraries.
 
-The goal was to build a utility similar to `top` or `htop`, but from scratch — using only Python and Linux system files — to understand how the operating system manages processes, CPU time, and core scheduling.
+### 🔍 Features
+- Real-time, interval-based CPU usage display
+- Parses `/proc/<pid>/stat` to calculate process CPU time
+- Groups CPU usage by the core each process runs on
+- Adapts to any number of CPU cores
+- Pure Python (no dependencies)
 
-### 🧠 Key Features
-- Real-time **interval-based CPU usage** calculation per core
-- Parses `/proc/<pid>/stat` manually to extract process times
-- Groups CPU usage by the core each process is running on
-- Dynamically adapts to the number of available CPU cores
-- Simple terminal output showing total usage per core
-- Uses no external libraries (pure Python + Linux)
-
-### 🔧 Usage
+### 🚀 Usage
 ```bash
 python3 PerC5.py <wait_time_in_seconds>
 ```
@@ -30,158 +28,126 @@ python3 PerC5.py <wait_time_in_seconds>
 ## 🎮 Project 2: Snake Game (Java)
 
 ### 📌 Description
-A feature-rich Snake game written in Java using Swing for the GUI. It was created as a university project and includes multiple levels, a menu system, image-based resources, and custom maps.
+A classic Snake game built with Java Swing. The project includes multiple levels (`Board1` to `Board7`), a main menu (`Menu.java`), and image-based resources.
 
-> ⚠️ This project is **incomplete** and may contain bugs or unfinished features. It was originally developed for coursework and hasn’t been fully debugged.
+> ⚠️ **Note:** The game is incomplete and may contain bugs or unpolished code. Originally developed for a university assignment.
 
-### 🧠 Key Features
-- Classic snake gameplay across multiple levels (`Board1` to `Board7`)
-- Main menu and level selector (with UI in `Menu.java`)
-- Custom assets (sprites, map layout, etc.)
-- Level logic and player control using Java's KeyListener
+### 🔍 Features
+- Multiple hand-coded levels with varying difficulty
+- Menu system for level selection
+- Graphical assets (PNG-based snake, apples, obstacles)
+- Player control via keyboard input
 
 ### 📁 Structure
 ```
 SnakeGame/
-├── doc/                 # Project documentation (e.g. Snake Project.docx)
-├── nbproject/Snake/     # NetBeans project with source code and build setup
-├── src/                 # Resources and source files (Java + images)
+├── doc/                  # Documentation (e.g., Snake Project.docx)
+├── nbproject/Snake/      # NetBeans project with Java source and build configs
+├── src/                  # Source code + image resources
 ```
 
 ### ▶️ Run Instructions
-**In NetBeans**
-- Open `nbproject/Snake` in NetBeans
-- Click Run
-
+Open the `nbproject/Snake` folder in NetBeans and run the project.
 
 ---
 
 ## 🏨 Project 3: Hotel Management System (Java + SQL)
 
 ### 📌 Description
-A Java Swing-based desktop application simulating a hotel management system. It allows management of rooms, employees, and customers with backend logic supported by SQL scripts.
+A GUI-based hotel management system written in Java Swing, with SQL scripts to support data storage for employees, rooms, and customer check-ins.
 
-> ⚠️ This project is **incomplete** and may contain bugs or partially implemented features. It was developed for a university course.
+> ⚠️ **Note:** This project is partially implemented and may not include complete error handling or advanced validations.
 
-### 🧠 Key Features
-- Room and employee registration
-- Customer check-in/check-out system
-- Login screen and simple authentication
-- Backend logic supported by SQL queries
-- ER diagrams and schema documentation included
+### 🔍 Features
+- Employee, customer, and room management
+- Login authentication via `Login.java`
+- Check-in and check-out functionality
+- SQL backend with table creation, insertion, and queries
+- Includes schema diagrams and ER diagrams in the `/docs` folder
 
 ### 📁 Structure
 ```
 HMS_Project/
-├── docs/         # ER diagrams, schema, Word documentation
-├── sql/          # SQL scripts for table creation and queries
-└── src/          # Java Swing GUI source code (Login.java, Dashboard.java, etc.)
+├── docs/    # ER Diagrams, Schema PDFs, Word files
+├── sql/     # SQL scripts for DB structure and queries
+└── src/     # Java Swing GUI (Login, Dashboard, Room, etc.)
 ```
 
 ### ▶️ Run Instructions
-1. Set up a local MySQL database using scripts from the `sql/` folder
-2. Ensure database credentials are configured in `conn.java`
-3. Run the application starting from `Login.java`
+1. Set up a MySQL database using scripts in `sql/`
+2. Update DB credentials in `conn.java`
+3. Compile and run the project starting from `Login.java`
+
 ---
 
-### 🧮 Project 4: Assembly Language Examples (`AssemblyProjects/`)
+## 🧮 Project 4: Assembly Language Examples (`AssemblyProjects/`)
 
-#### 📌 Description  
-This folder contains simple **x86 Assembly** programs written using **NASM syntax** for 32-bit Linux. These projects were created for educational purposes during university and focus on low-level logic, bitwise arithmetic, and control flow using registers and memory manipulation.
+### 📌 Description
+This directory contains beginner-level **x86 Assembly programs** using **NASM** for 32-bit Linux. They demonstrate basic algorithms like multi-precision arithmetic and number classification at the register level.
 
-> ⚠️ These are learning exercises and may not be optimized for performance or best practices. They are meant to demonstrate basic assembly programming concepts.
+> ⚠️ Educational code — not optimized for performance or completeness.
 
-#### 📁 Files Included
+### 📄 Included Files
+- `64bit_Addition.asm`: Simulates 64-bit addition using two 32-bit numbers with carry handling (`adc`)
+- `Perfect_Numbers.asm`: Finds all perfect numbers from 1 to 1000 using loops and factor summing
+- `AgeCalculator.asm`: (See Project 5 below)
 
-- **`64bit_Addition.asm`**  
-  🧮 Simulates 64-bit addition by combining two 32-bit values for each operand.  
-  **Concepts:** Multi-precision arithmetic, register handling, `adc` (add with carry).  
-  **Learning Focus:** Understanding how to process large integers beyond native register size.
+### 🛠 Requirements
+- Assembler: NASM  
+- Platform: Linux (32-bit)  
+- I/O Support: [`asm_io.inc`](https://www.plantation-productions.com/Webster/)
 
-- **`Perfect_Numbers.asm`**  
-  🔍 Finds and prints all perfect numbers from 1 to 1000.  
-  **Concepts:** Loops, modulo (`div`), nested iterations, factor summing.  
-  **Learning Focus:** Classic algorithm implemented at the low-level using registers and memory.
-
-- **`AgeCalculator.asm`** (See Project 5 below)
-
-#### 🛠️ Requirements
-- **Assembler:** NASM  
-- **OS:** Linux (32-bit)  
-- **Dependencies:** [`asm_io.inc`](https://www.plantation-productions.com/Webster/) (used for input/output)
-
-#### ▶️ Build & Run Instructions:
+### ▶️ Build Instructions
 ```bash
-nasm -f elf <filename>.asm
-ld -m elf_i386 -o <filename> <filename>.o asm_io.o
-./<filename>
+nasm -f elf filename.asm
+ld -m elf_i386 -o filename filename.o asm_io.o
+./filename
 ```
 
 ---
 
-### 📁 Project 5: Age Calculator in MIPS Assembly (`AgeCalculator.asm`)
+## 📏 Project 5: Age Calculator in MIPS Assembly (`AgeCalculator.asm`)
 
-#### 📌 Description  
-This is a **MIPS Assembly language program** that calculates a person's age based on their birth date and the current date. It was written using the **MARS 4.5 simulator**, and simulates interactive input/output through system calls.
+### 📌 Description
+A simple **MIPS Assembly program** to calculate a person’s age using console input for current date and birth date. Built for the MARS 4.5 simulator.
 
-The original logic was written in Java, then manually translated to MIPS to explore how control flow, branching, and memory access are handled in a RISC architecture.
+The program simulates logic translation from a Java version to a RISC-based architecture using branches, memory offsets, and MIPS system calls.
 
-#### 🧠 Key Concepts
-- MIPS system calls for console I/O  
-- Labels and conditional branching  
-- Control structures using jump and comparison instructions  
-- Memory layout via `.data` and `.text` sections  
-- Manual date comparison and arithmetic  
-- Educational conversion from high-level logic to low-level assembly
+### 🧠 Key Concepts
+- Console input/output via system calls
+- Conditional branching and arithmetic
+- Memory layout with `.data` and `.text`
+- Basic control flow and logic structures
 
-#### 📄 Files
-- **`AgeCalculator.asm`** — Complete MIPS assembly source code  
-- **`گزارش کار.pdf`** — Persian report explaining the program, its logic, and system call usage in detail
-
-> ⚠️ Like other university projects, this one may contain bugs or incomplete features. It was developed for learning purposes and is not production-grade.
+### 📄 Files
+- `AgeCalculator.asm`: MIPS source code
+- `گزارش کار.pdf`: Persian documentation explaining the logic and implementation
 
 ---
 
 ## 🐍 Project 6: Python Programming & Cryptography Exercises (`PythonCryptoExercises/`)
 
 ### 📌 Description
-This folder contains a small collection of **Python scripts** written during university coursework and self-study. The exercises focus on core programming logic, list and string manipulation, as well as beginner-friendly cryptography tasks, such as brute-force attacks and bit-flipping.
+A collection of small Python programs covering basic logic, data manipulation, and beginner cryptographic concepts like brute-force attacks and bit-flipping.
 
-These scripts are educational and showcase how low-level logic and basic cryptographic attacks can be implemented in Python using minimal libraries.
+These scripts explore how simple algorithms work behind the scenes using Python’s built-in data structures and libraries like `pycryptodome`.
 
----
+### 📄 Included Files
 
-### 📁 Files
+| File Name                     | Description |
+|------------------------------|-------------|
+| `ManualStringReversal.py`    | Reverses a string without slicing; uses loops only |
+| `IndexBasedSwap.py`          | Swaps two elements in a list by index |
+| `DESBruteForceParallel.py`   | Brute-forces DES with an 8-digit key using multithreading |
+| `BitFlipBase64Attack.py`     | Bit-flipping attack on Base64-encoded DES cipher to modify plaintext |
 
-| 📄 File Name                   | 📝 Description |
-|-------------------------------|----------------|
-| `ManualStringReversal.py`     | Reverses a string **without using slicing** or built-in functions. Reinforces loop-based string processing. |
-| `IndexBasedSwap.py`           | A simple list operation that swaps two items by index. Useful for understanding list mutability and indexing. |
-| `DESBruteForceParallel.py`    | Brute-forces a DES-encrypted string using an 8-digit key. Uses Python's `asyncio` and `ThreadPoolExecutor` for **parallel key searching**. |
-| `BitFlipBase64Attack.py`      | Demonstrates a **bit-flipping attack** on a DES-encrypted message, flipping ciphertext bits to modify a known plaintext segment after decoding from Base64. |
-
----
-
-### 🔧 Requirements
-
-Install the required library before running the cryptographic scripts:
-
+### 🛠 Requirements
+Install the required dependency:
 ```bash
 pip install pycryptodome
 ```
 
----
-
-### 🚀 How to Run
-
+### ▶️ Run Example
 ```bash
-# Example: Run the brute-force DES cracker
 python3 DESBruteForceParallel.py
 ```
-
----
-
-### ⚠️ Disclaimer
-
-These programs were created for **educational purposes only**. They may include incomplete logic or vulnerabilities and are not meant for production use.
-
