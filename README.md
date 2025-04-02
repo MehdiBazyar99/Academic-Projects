@@ -142,4 +142,46 @@ The original logic was written in Java, then manually translated to MIPS to expl
 
 ---
 
+## 🐍 Project 6: Python Programming & Cryptography Exercises (`PythonCryptoExercises/`)
+
+### 📌 Description
+This folder contains a small collection of **Python scripts** written during university coursework and self-study. The exercises focus on core programming logic, list and string manipulation, as well as beginner-friendly cryptography tasks, such as brute-force attacks and bit-flipping.
+
+These scripts are educational and showcase how low-level logic and basic cryptographic attacks can be implemented in Python using minimal libraries.
+
+---
+
+### 📁 Files
+
+| 📄 File Name                   | 📝 Description |
+|-------------------------------|----------------|
+| `ManualStringReversal.py`     | Reverses a string **without using slicing** or built-in functions. Reinforces loop-based string processing. |
+| `IndexBasedSwap.py`           | A simple list operation that swaps two items by index. Useful for understanding list mutability and indexing. |
+| `DESBruteForceParallel.py`    | Brute-forces a DES-encrypted string using an 8-digit key. Uses Python's `asyncio` and `ThreadPoolExecutor` for **parallel key searching**. |
+| `BitFlipBase64Attack.py`      | Demonstrates a **bit-flipping attack** on a DES-encrypted message, flipping ciphertext bits to modify a known plaintext segment after decoding from Base64. |
+
+---
+
+### 🔧 Requirements
+
+Install the required library before running the cryptographic scripts:
+
+```bash
+pip install pycryptodome
+```
+
+---
+
+### 🚀 How to Run
+
+```bash
+# Example: Run the brute-force DES cracker
+python3 DESBruteForceParallel.py
+```
+
+---
+
+### ⚠️ Disclaimer
+
+These programs were created for **educational purposes only**. They may include incomplete logic or vulnerabilities and are not meant for production use.
 
