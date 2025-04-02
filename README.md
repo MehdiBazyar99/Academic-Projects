@@ -82,63 +82,64 @@ HMS_Project/
 1. Set up a local MySQL database using scripts from the `sql/` folder
 2. Ensure database credentials are configured in `conn.java`
 3. Run the application starting from `Login.java`
-
-## 🧮 Project 4: Assembly Language Examples (`AssemblyProjects/`)
-
-### 📌 Description
-This folder contains simple x86 Assembly programs written using NASM syntax for 32-bit Linux. These projects were developed for learning purposes during university and focus on low-level logic, bitwise arithmetic, and control flow using registers and memory manipulation.
-
-> ⚠️ **Note:** These are **educational examples** and may not represent fully optimized or polished production code. They are meant to demonstrate basic assembly concepts.
-
 ---
 
-### 📁 Files Included
+### 🧮 Project 4: Assembly Language Examples (`AssemblyProjects/`)
 
-#### 🔢 `64bit_Addition.asm`
-- **Purpose**: Simulates **64-bit addition** using two 64-bit integers by combining two 32-bit values for each operand.
-- **Concepts**: Register-level arithmetic, `adc` for carry handling, multi-precision operations.
-- **Learning Focus**: Understanding how CPUs process numbers larger than the register size.
+#### 📌 Description  
+This folder contains simple **x86 Assembly** programs written using **NASM syntax** for 32-bit Linux. These projects were created for educational purposes during university and focus on low-level logic, bitwise arithmetic, and control flow using registers and memory manipulation.
 
-#### 🔍 `Perfect_Numbers.asm`
-- **Purpose**: Finds and prints all **perfect numbers** from 1 to 1000.
-- **Concepts**: Loops, modulo using `div`, nested iteration, conditional logic, summing factors.
-- **Learning Focus**: Classic algorithm implemented at the register/memory level.
----
+> ⚠️ These are learning exercises and may not be optimized for performance or best practices. They are meant to demonstrate basic assembly programming concepts.
 
-### 🛠️ Requirements
-- **Assembler**: NASM
-- **OS**: Linux (with `asm_io.inc` support)
-- **Build & Run**:
+#### 📁 Files Included
+
+- **`64bit_Addition.asm`**  
+  🧮 Simulates 64-bit addition by combining two 32-bit values for each operand.  
+  **Concepts:** Multi-precision arithmetic, register handling, `adc` (add with carry).  
+  **Learning Focus:** Understanding how to process large integers beyond native register size.
+
+- **`Perfect_Numbers.asm`**  
+  🔍 Finds and prints all perfect numbers from 1 to 1000.  
+  **Concepts:** Loops, modulo (`div`), nested iterations, factor summing.  
+  **Learning Focus:** Classic algorithm implemented at the low-level using registers and memory.
+
+- **`AgeCalculator.asm`** (See Project 5 below)
+
+#### 🛠️ Requirements
+- **Assembler:** NASM  
+- **OS:** Linux (32-bit)  
+- **Dependencies:** [`asm_io.inc`](https://www.plantation-productions.com/Webster/) (used for input/output)
+
+#### ▶️ Build & Run Instructions:
 ```bash
 nasm -f elf <filename>.asm
 ld -m elf_i386 -o <filename> <filename>.o asm_io.o
 ./<filename>
 ```
 
-📁 Project 5: Age Calculator in MIPS Assembly (AgeCalculator.asm)
-📌 Description
-This project is a MIPS Assembly language program that calculates a user's age based on their birth date and the current date. It uses basic system calls and arithmetic operations in MIPS, simulating user interaction through console input/output in the MARS 4.5 simulator.
+---
 
-The program was originally written in Java and manually converted into MIPS Assembly to better understand how low-level architectures handle logic, branching, and memory management.
+### 📁 Project 5: Age Calculator in MIPS Assembly (`AgeCalculator.asm`)
 
-🧠 Key Concepts
-MIPS system calls for I/O
+#### 📌 Description  
+This is a **MIPS Assembly language program** that calculates a person's age based on their birth date and the current date. It was written using the **MARS 4.5 simulator**, and simulates interactive input/output through system calls.
 
-Labeling and branching for condition checks
+The original logic was written in Java, then manually translated to MIPS to explore how control flow, branching, and memory access are handled in a RISC architecture.
 
-Data and text sections for memory management
+#### 🧠 Key Concepts
+- MIPS system calls for console I/O  
+- Labels and conditional branching  
+- Control structures using jump and comparison instructions  
+- Memory layout via `.data` and `.text` sections  
+- Manual date comparison and arithmetic  
+- Educational conversion from high-level logic to low-level assembly
 
-Control structures implemented in assembly (conditional jumps)
+#### 📄 Files
+- **`AgeCalculator.asm`** — Complete MIPS assembly source code  
+- **`گزارش کار.pdf`** — Persian report explaining the program, its logic, and system call usage in detail
 
-Array and memory offset management
+> ⚠️ Like other university projects, this one may contain bugs or incomplete features. It was developed for learning purposes and is not production-grade.
 
-Age calculation algorithm implemented in low-level code
+---
 
-📄 Files
-AgeCalculator.asm — The MIPS assembly code
-
-Report.pdf — Detailed explanation (in Persian) of the program logic, system calls used, and architecture background
-
-⚠️ Note
-Like some of the other projects, this one may contain bugs or incomplete features. It was created for educational purposes during university coursework.
 
