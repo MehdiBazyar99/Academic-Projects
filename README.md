@@ -158,4 +158,3 @@ python3 DESBruteForceParallel.py
 ---
 
 If you'd like to explore the code, feel free to browse each folder. Feedback and contributions are welcome!
-```
