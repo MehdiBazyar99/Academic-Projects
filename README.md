@@ -1,27 +1,67 @@
 # 🎓 Academic Projects
 
-Welcome to my collection of university assignments and practice projects. These were developed throughout my undergraduate studies to gain hands-on experience in:
+Welcome to my collection of university coursework, coding exercises, and personal practice projects. These were developed throughout my undergraduate studies to build hands-on experience in areas like:
 
 - Systems programming
 - Desktop application development
 - Networking and low-level logic
-- Cryptographic concepts
+- Cryptographic techniques and secure coding
 
-> ⚠️ **Disclaimer:** Many of these projects were written under time constraints or as coursework. Some may include bugs, incomplete features, or inefficient code. They are shared here for educational purposes only.
+> ⚠️ **Disclaimer:** Many of these projects were developed under time constraints or as part of academic assignments. As such, some may contain incomplete features, inefficient logic, or bugs. They are shared here for educational purposes only.
 
 ---
 
-### 🧠 Project 1: Per-Core CPU Usage Monitor (`PerC5.py`)
+### ♻️ Project 1: Smart Trash Bin Monitoring System (Arduino + ESP8266)
 
-#### 📌 Description
-A low-level Linux CPU monitoring tool written in pure Python. It reads from the `/proc` filesystem to calculate real-time per-core CPU usage, similar to `top` or `htop`, but implemented from scratch using no external libraries.
+#### 📌 Description  
+A real-world IoT project designed to monitor trash bin fill levels, weight, and environmental hazards (like gas or flame), then transmit the data to a cloud MQTT server (HiveMQ). This project explores **sensor networks**, **embedded programming**, and **cloud-based communication**.
+
+The current version uses a two-board architecture:
+- **Arduino Uno** reads sensors (ultrasonic, flame, MQ2 gas, load cell) and sends data via JSON over serial.
+- **NodeMCU ESP8266** receives the data, connects to Wi-Fi, and publishes to an MQTT topic.
 
 #### 🔍 Features
-- Real-time, interval-based CPU usage display
-- Parses `/proc/<pid>/stat` to extract process CPU time
-- Groups CPU usage by the core each process runs on
-- Adapts to any number of CPU cores
-- No dependencies — pure Python
+- Ultrasonic sensor for bin fill level
+- Load cell + HX711 for weight measurement
+- Gas and flame detection (MQ2 + IR)
+- JSON-formatted serial communication
+- MQTT publishing via NodeMCU + PubSubClient
+
+#### 📁 Structure
+```
+SmartBin/
+├── smartbin_sensor_uno.ino       # Sensor logic (Arduino Uno)
+├── smartbin_gateway_nodemcu.ino  # MQTT logic (NodeMCU)
+└── project_notes.txt             # Design overview and future plans
+```
+
+#### 🧠 Key Concepts
+- Embedded system communication
+- Sensor data aggregation and formatting
+- Serial protocols between microcontrollers
+- Wi-Fi and MQTT integration in IoT
+- Lightweight JSON handling with ArduinoJson
+
+#### 📈 Future Roadmap
+A second version is in development to consolidate all functionality into a single NodeMCU board. Planned upgrades include:
+- OLED display for live status
+- Multiplexer-controlled LED indicators
+- Calibration and restart buttons
+- Audio alerts via buzzer
+- More efficient GPIO and power management
+
+---
+
+### 🧠 Project 2: Per-Core CPU Usage Monitor (`PerC5.py`)
+
+#### 📌 Description  
+A low-level Linux CPU monitor written in pure Python. It reads directly from the `/proc` filesystem to compute real-time CPU usage per core — like a simplified `top` or `htop`, implemented from scratch.
+
+#### 🔍 Features
+- Monitors each core individually
+- Parses `/proc/<pid>/stat` for process CPU time
+- Aggregates usage by CPU core
+- Pure Python, no external libraries
 
 #### 🚀 Usage
 ```bash
@@ -30,131 +70,113 @@ python3 PerC5.py <wait_time_in_seconds>
 
 ---
 
-### 🎮 Project 2: Snake Game (Java)
+### 🎮 Project 3: Snake Game (Java)
 
-#### 📌 Description
-A classic Snake game built with Java Swing. This version includes multiple levels (`Board1` to `Board7`), a main menu (`Menu.java`), and custom image-based resources.
+#### 📌 Description  
+A graphical Snake game implemented in Java Swing with multiple levels and image-based assets. Created to explore GUI programming, game loops, and event handling in Java.
 
-> ⚠️ **Note:** This project is incomplete and may contain bugs or unpolished logic. Developed as part of a university assignment.
+> ⚠️ **Note:** This version is a work-in-progress and may contain bugs or incomplete features.
 
 #### 🔍 Features
-- Multiple hand-coded levels
-- Menu system for level selection
-- Graphical sprites for snake, apples, and walls
-- Keyboard-based player control
+- Level system with multiple custom maps
+- Menu UI with level selection
+- Image assets for snake, apples, and obstacles
+- Keyboard input handling
 
 #### 📁 Structure
 ```
 SnakeGame/
-├── doc/                  # Documentation (e.g., Snake Project.docx)
-├── nbproject/Snake/      # NetBeans project structure
-├── src/                  # Java source files + image resources
+├── doc/                  # Documentation and report
+├── nbproject/Snake/      # NetBeans project setup
+├── src/                  # Java classes and image resources
 ```
-
-#### ▶️ Run Instructions
-- Open the `nbproject/Snake` folder in NetBeans
-- Click **Run**
 
 ---
 
-### 🏨 Project 3: Hotel Management System (Java + SQL)
+### 🏨 Project 4: Hotel Management System (Java + SQL)
 
-#### 📌 Description
-A Java Swing-based desktop app simulating a hotel management system. It supports employee, room, and customer management with SQL backend support.
+#### 📌 Description  
+A Java-based desktop application simulating a basic hotel management platform. It includes UI for managing employees, rooms, and guests, and connects to a MySQL database via custom SQL scripts.
 
-> ⚠️ **Note:** Partially implemented. May lack input validation and complete error handling.
+> ⚠️ Still under development. Error handling and input validation are limited.
 
 #### 🔍 Features
-- Room and employee registration
-- Customer check-in/check-out
+- Employee and room registration
+- Guest check-in/check-out
 - Simple login authentication
-- Backend powered by custom SQL scripts
-- ER diagrams and schema documentation included
+- SQL-backed data storage
+- Documentation with ER diagrams and schema
 
 #### 📁 Structure
 ```
 HMS_Project/
-├── docs/    # ER diagrams, schema visuals, project reports
-├── sql/     # SQL scripts (create, insert, query)
-└── src/     # Java GUI (Login.java, Dashboard.java, etc.)
+├── docs/    # Reports and ER diagrams
+├── sql/     # Database creation and sample data
+└── src/     # Java Swing UI
 ```
 
 #### ▶️ Run Instructions
-1. Create a MySQL database using the scripts in `sql/`
-2. Update DB credentials in `conn.java`
-3. Compile and run from `Login.java`
+1. Set up the MySQL database using the `sql/` scripts
+2. Update database credentials in `conn.java`
+3. Launch the application via `Login.java`
 
 ---
 
-### 🧮 Project 4: Assembly Language Examples (`AssemblyProjects/`)
+### 🧮 Project 5: x86 Assembly Examples (`AssemblyProjects/`)
 
-#### 📌 Description
-A collection of simple x86 Assembly programs using **NASM** for 32-bit Linux. These demonstrate low-level concepts like register operations, multi-precision arithmetic, and control flow.
+#### 📌 Description  
+A small collection of x86 Assembly programs using NASM for Linux. These examples demonstrate bit-level operations, loops, conditionals, and working with registers.
 
-> ⚠️ These examples are educational and not optimized for production use.
+> ⚠️ Educational only — not optimized or structured for production.
 
-#### 📄 Included Files
-- `64bit_Addition.asm` — Simulates 64-bit addition using `adc` and two 32-bit registers
-- `Perfect_Numbers.asm` — Finds all perfect numbers from 1 to 1000
-- `AgeCalculator.asm` — See Project 5 below
+#### 📄 Notable Files
+- `64bit_Addition.asm` — Adds two 64-bit integers using 32-bit registers
+- `Perfect_Numbers.asm` — Finds perfect numbers from 1 to 1000
+- `AgeCalculator.asm` — Moved to next project (MIPS variant)
 
 #### 🛠 Requirements
-- Assembler: NASM
-- OS: Linux (32-bit)
-- Support File: `asm_io.inc` (for I/O operations)
-
-#### ▶️ Build & Run
-```bash
-nasm -f elf filename.asm
-ld -m elf_i386 -o filename filename.o asm_io.o
-./filename
-```
+- NASM assembler
+- Linux (32-bit support)
+- `asm_io.inc` for I/O
 
 ---
 
-### 📏 Project 5: Age Calculator in MIPS Assembly (`AgeCalculator.asm`)
+### 📏 Project 6: Age Calculator in MIPS Assembly (`AgeCalculator.asm`)
 
-#### 📌 Description
-A **MIPS Assembly** program that calculates a person's age based on their birth date and current date. Built using the **MARS 4.5 simulator**, this project demonstrates how high-level logic (originally written in Java) can be implemented in a RISC-based architecture.
+#### 📌 Description  
+A MIPS Assembly implementation of an age calculator based on input birth date and current date. Built using the MARS 4.5 IDE and translated from an earlier Java version.
 
-#### 🧠 Key Concepts
-- User input/output via MIPS system calls
-- Conditional branching and arithmetic operations
-- Memory layout using `.data` and `.text` segments
-- Basic control flow and register usage
+#### 🧠 Concepts Explored
+- User interaction with MIPS syscalls
+- Conditional logic and branching
+- Working with `.data` and `.text` memory segments
+- Manual date calculations
 
 #### 📄 Files
-- `AgeCalculator.asm` — MIPS Assembly source
-- `گزارش کار.pdf` — Detailed explanation in Persian (includes system call logic)
+- `AgeCalculator.asm` — Source code
+- `گزارش کار.pdf` — Persian-language report with breakdown
 
 ---
 
-### 🐍 Project 6: Python Programming & Cryptography Exercises (`PythonCryptoExercises/`)
+### 🐍 Project 7: Python Cryptography & Programming Exercises (`PythonCryptoExercises/`)
 
-#### 📌 Description
-A set of small Python programs focused on basic programming logic and introductory cryptography concepts. Includes brute-force attacks, bit manipulation, and manual logic implementations.
+#### 📌 Description  
+A set of beginner-to-intermediate Python scripts exploring basic logic and cryptographic attacks. Includes experiments with brute-force search, bit manipulation, and attack simulations.
 
-#### 📄 Included Files
+#### 📄 Key Files
 
-| File Name                  | Description |
-|---------------------------|-------------|
-| `ManualStringReversal.py` | Reverses a string without slicing or built-ins |
-| `IndexBasedSwap.py`       | Swaps two elements in a list by index |
-| `DESBruteForceParallel.py`| Brute-forces DES using multithreading |
-| `BitFlipBase64Attack.py`  | Demonstrates bit-flipping in Base64-encoded DES |
+| File Name                  | Purpose |
+|---------------------------|---------|
+| `ManualStringReversal.py` | Reverses strings manually |
+| `IndexBasedSwap.py`       | Swaps list elements |
+| `DESBruteForceParallel.py`| Brute-forces DES keys using multithreading |
+| `BitFlipBase64Attack.py`  | Demonstrates bit-flipping attacks on Base64-encoded ciphertext |
 
 #### 🛠 Requirements
-Install required libraries:
-
 ```bash
 pip install pycryptodome
 ```
 
-#### ▶️ Run Example
-```bash
-python3 DESBruteForceParallel.py
-```
-
 ---
 
-If you'd like to explore the code, feel free to browse each folder. Feedback and contributions are welcome!
+Feel free to explore any project folder. Feedback and suggestions are always welcome!
