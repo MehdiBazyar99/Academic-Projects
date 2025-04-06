@@ -1,0 +1,45 @@
+Smart Trash Bin Monitoring System – Project Notes
+--------------------------------------------------
+
+Overview:
+---------
+This project aims to create a smart trash bin that monitors fill level, weight, and potential hazards like gas or fire.
+It uses an Arduino Uno for sensor interfacing and a NodeMCU ESP8266 for wireless data transmission to a cloud MQTT broker (HiveMQ).
+
+First Revision Architecture:
+----------------------------
+- Arduino Uno:
+  - Interfaces with SRF05 ultrasonic sensor, MQ2 gas sensor, flame sensor, and load cell (via HX711).
+  - Collects sensor data and creates a compact JSON object.
+  - Sends the JSON over SoftwareSerial to the NodeMCU.
+
+- NodeMCU ESP8266:
+  - Receives JSON via SoftwareSerial.
+  - Deserializes the JSON data.
+  - Publishes sensor data to an MQTT topic on HiveMQ using Wi-Fi.
+
+Sensor Data Format (JSON):
+---------------------------
+Example payload sent from Arduino to NodeMCU:
+{
+  "distance": 27.5,
+  "weight": 154
+}
+
+MQTT Cloud Integration:
+-----------------------
+- Broker: HiveMQ (Public MQTT broker for testing)
+- Data is published to a topic such as "iot/bin/data".
+- MQTT client uses PubSubClient over secure Wi-Fi connection.
+
+Future Plans:
+-------------
+- Move all logic to NodeMCU (eliminating Arduino Uno).
+- Add:
+  - OLED display for local readout
+  - LED indicators via CD4051 multiplexer
+  - Buzzer for fire/gas alert
+  - Push buttons for tare and calibration
+- Add timestamps and device IDs to MQTT payload
+- Improve power delivery and GPIO management
+
