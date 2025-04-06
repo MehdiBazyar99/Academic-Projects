@@ -1,3 +1,5 @@
+> 🇩🇪 **Für die deutsche Version dieses Projekts, siehe [README_de.md](README_de.md).**
+
 # 🎓 Academic Projects
 
 Welcome to my collection of university coursework, coding exercises, and personal practice projects. These were developed throughout my undergraduate studies to build hands-on experience in areas like:
