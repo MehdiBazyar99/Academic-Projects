@@ -1,3 +1,5 @@
+> 🇬🇧 **For the English version of this project, see [README.md](README.md).**
+
 # 🎓 Akademische Projekte
 
 Willkommen zu meiner Sammlung von universitären Projekten, Übungen und praktischen Arbeiten. Diese wurden während meines Informatikstudiums entwickelt, um praktische Erfahrung in den folgenden Bereichen zu sammeln:
