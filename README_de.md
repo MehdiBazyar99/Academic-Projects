@@ -95,32 +95,45 @@ SnakeGame/
 
 ---
 
-### 🏨 Projekt 4: Hotelverwaltungssystem (Java + SQL)
+
+### 🏨 Projekt 4: Hotelverwaltungssystem (JavaFX + MySQL)
 
 #### 📌 Beschreibung  
-Eine Java-Desktopanwendung zur Simulation eines Hotelmanagementsystems. Beinhaltet UIs für Mitarbeiter-, Raum- und Gästeverwaltung sowie eine MySQL-Datenbankanbindung.
+Ein Hotelverwaltungssystem mit **JavaFX**-Oberfläche und **MySQL**-Datenbank, entwickelt im Rahmen eines Uni-Kurses zur Übung von objektorientierter Programmierung, Datenbankintegration und GUI-Entwicklung mit JavaFX.
 
-> ⚠️ Eingeschränkte Fehlerbehandlung und Validierung – noch in Entwicklung.
+Das System simuliert zentrale Hotelprozesse wie Buchungen, Gästeverwaltung, Zimmerbelegung und Serviceverwendung. Darüber hinaus enthält es einfache Analysefunktionen zur Auswertung von Hotelnutzung und Umsätzen.
+
+> ⚠️ Hinweis: Das Projekt ist nicht vollständig abgeschlossen und enthält teilweise Platzhalter-Logik (z. B. fest codierte Login-Daten). Es wurde zu Lernzwecken entwickelt.
 
 #### 🔍 Funktionen
-- Mitarbeiter- und Zimmerregistrierung
-- Check-in/Check-out von Gästen
-- Einfache Login-Authentifizierung
-- Datenbank mit eigenen SQL-Skripten
-- Dokumentation mit ER-Diagrammen
+- JavaFX-UI mit mehreren Tabs und Tabellenansichten
+- Einfache Login-Oberfläche mit Sitzungsverwaltung
+- Verwaltung von Gästen, Zimmern, Hotels und Services (CRUD)
+- Buchungssystem mit Check-in/Check-out und Zahlung
+- Auswertungen wie:
+  - Umsatzstärkste Gäste
+  - Am häufigsten genutzte Zimmer, Hotels und Services
+  - Profitabelste Städte
+  - Hotels, die ein Gast in einer bestimmten Stadt nicht besucht hat
 
 #### 📁 Struktur
 ```
-HMS_Project/
-├── docs/    # Berichte und Diagramme
-├── sql/     # SQL-Skripte
-└── src/     # Java Swing UI
+HMS-Real/
+├── docs/         # ER-Diagramme und Berichte
+├── resources/    # FXML-Dateien für JavaFX-Oberflächen
+├── src/sample/   # Java-Quellcode (Modelle, Controller, Main)
+├── sql/          # SQL-Skripte für Tabellen, Daten und Abfragen
 ```
 
-#### ▶️ Anleitung
-1. MySQL-Datenbank mit `sql/`-Skripten erstellen
-2. Zugangsdaten in `conn.java` eintragen
-3. Projekt starten über `Login.java`
+#### 🗃 Datenbankdesign
+
+Die Datenbank basiert auf einem normalisierten relationalen Schema mit Tabellen für:
+- Gäste, Hotels, Zimmer, Buchungen und Services
+- Adressinformationen (für Gäste und Hotels)
+- Verwendete Services und Zimmertypen
+
+📌 Das ER-Diagramm befindet sich in `docs/schemaV3.png`.  
+📄 Die zugehörigen SQL-Skripte liegen im Ordner `sql/`.
 
 ---
 
