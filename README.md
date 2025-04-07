@@ -134,7 +134,6 @@ HMS-Real/
 ├── resources/       # FXML UI files (JavaFX)
 ├── src/sample/      # Java classes (controllers, models)
 ├── sql/             # Schema creation, insert scripts, and analysis queries
-└── FileList.txt     # Auto-generated file listing
 ```
 
 ---
