@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="654.0" prefWidth="314.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddGuest">
+   <children>
+      <VBox alignment="CENTER_LEFT" layoutX="177.0" layoutY="106.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="272.0" prefWidth="110.0" spacing="22.0">
+         <children>
+            <Label fx:id="guest_ncode" text="کد ملی " textAlignment="CENTER" />
+            <Label fx:id="guest_fname" text="نام" />
+            <Label fx:id="guest_lname" text="نام خانوادگی" />
+            <Label fx:id="guest_phnumber" text="شماره تلفن" />
+            <Label fx:id="guest_tbh" text="دفعات حضور" />
+            <Label fx:id="guest_email" text="آدرس ایمیل" />
+            <Label fx:id="guest_country" text="کشور" />
+            <Label fx:id="guest_state" text="استان/ایالت" />
+            <Label fx:id="guest_city" text="شهر" />
+            <Label fx:id="guest_address" text="آدرس" />
+            <Label fx:id="guest_zipcode" text="کد پستی" />
+         </children>
+      </VBox>
+      <VBox layoutX="27.0" layoutY="103.0" prefHeight="377.0" prefWidth="150.0" spacing="12.0">
+         <children>
+            <TextField prefWidth="150.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TextField>
+            <TextField />
+            <TextField>
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField>
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField>
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField />
+            <TextField>
+               <VBox.margin>
+                  <Insets top="4.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField>
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField>
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField>
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField />
+         </children>
+      </VBox>
+      <Label layoutX="123.0" layoutY="35.0" text="افزودن مهمان" />
+      <HBox layoutX="116.0" layoutY="578.0" spacing="10.0">
+         <children>
+            <Button fx:id="btn_ok" mnemonicParsing="false" text="تایید" />
+            <Button fx:id="btn_cancell" mnemonicParsing="false" text="لغو" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
