@@ -95,32 +95,60 @@ SnakeGame/
 
 ---
 
-### 🏨 Project 4: Hotel Management System (Java + SQL)
+### 🏨 Project 4: Hotel Management System (JavaFX + MySQL)
 
 #### 📌 Description  
-A Java-based desktop application simulating a basic hotel management platform. It includes UI for managing employees, rooms, and guests, and connects to a MySQL database via custom SQL scripts.
+A Hotel Management System developed as part of my university coursework, using **JavaFX** for the GUI and **MySQL** for data persistence. The project was built to practice object-oriented design, JavaFX development, and relational database modeling.
 
-> ⚠️ Still under development. Error handling and input validation are limited.
+It provides a basic simulation of a hotel’s operations, including booking, guest registration, room and service management, and analytical queries for business insights.
+
+> ⚠️ **Note:** The project is incomplete and was created primarily for educational purposes. Some features are still under development or use placeholder logic (e.g., hardcoded login credentials).
+
+---
 
 #### 🔍 Features
-- Employee and room registration
-- Guest check-in/check-out
-- Simple login authentication
-- SQL-backed data storage
-- Documentation with ER diagrams and schema
+- JavaFX-based UI with multiple tabs and data views
+- Login screen (basic session simulation)
+- Guest, hotel, room, and service management (CRUD operations)
+- Booking system with check-in/check-out tracking
+- Analytical features, such as:
+  - Most profitable guests
+  - Most frequently used rooms, hotels, and services
+  - Most profitable cities
+  - Hotels not visited by a guest in a specific city
+
+---
+
+#### 🧩 Technologies Used
+- Java 8+
+- JavaFX (FXML + SceneBuilder)
+- MySQL (via JDBC)
+- SQL-based reporting
+
+---
 
 #### 📁 Structure
 ```
-HMS_Project/
-├── docs/    # Reports and ER diagrams
-├── sql/     # Database creation and sample data
-└── src/     # Java Swing UI
+HMS-Real/
+├── docs/            # Schema diagrams and documentation
+├── resources/       # FXML UI files (JavaFX)
+├── src/sample/      # Java classes (controllers, models)
+├── sql/             # Schema creation, insert scripts, and analysis queries
+└── FileList.txt     # Auto-generated file listing
 ```
 
-#### ▶️ Run Instructions
-1. Set up the MySQL database using the `sql/` scripts
-2. Update database credentials in `conn.java`
-3. Launch the application via `Login.java`
+---
+
+#### 🗃️ Database Design
+
+The system uses a normalized relational schema, with separate tables for:
+- Hotels, guests, rooms, services
+- Bookings and service usage
+- Addresses (linked to both hotels and guests)
+- Room types and invoices
+
+📌 See `docs/schemaV3.png` for the full ER diagram.  
+📄 SQL scripts for schema creation and queries are included under `sql/`.
 
 ---
 
